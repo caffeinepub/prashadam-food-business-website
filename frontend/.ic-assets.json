@@ -1,0 +1,58 @@
+[
+  {
+    "match": "**/*",
+    "headers": {
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "nosniff"
+    },
+    "cache": {
+      "max_age": 3600
+    }
+  },
+  {
+    "match": ".well-known",
+    "ignore": false
+  },
+  {
+    "match": ".well-known/**",
+    "ignore": false,
+    "headers": {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Type": "text/plain; charset=utf-8",
+      "Cache-Control": "public, max-age=300"
+    }
+  },
+  {
+    "match": ".well-known/ic-domains",
+    "headers": {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Type": "text/plain; charset=utf-8",
+      "Cache-Control": "public, max-age=300"
+    },
+    "ignore": false
+  },
+  {
+    "match": "index.html",
+    "headers": {
+      "Cache-Control": "no-cache"
+    }
+  },
+  {
+    "match": "**/*.js",
+    "headers": {
+      "Cache-Control": "public, max-age=31536000, immutable"
+    }
+  },
+  {
+    "match": "**/*.css",
+    "headers": {
+      "Cache-Control": "public, max-age=31536000, immutable"
+    }
+  },
+  {
+    "match": "assets/**/*",
+    "headers": {
+      "Cache-Control": "public, max-age=31536000, immutable"
+    }
+  }
+]

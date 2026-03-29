@@ -1,0 +1,526 @@
+# Prashadam Food Business Website
+
+## Overview
+A business website for Prashadam Food, a New Delhi-based pure vegetarian Jain and Vaishnav kitchen specializing in no onion, no garlic cuisine. The website showcases their Tiffin, corporate buffet, and catering services with a comprehensive digital menu featuring horizontal tab navigation, PDF download functionality, UPI payment integration with delivery address collection, and WhatsApp ordering capabilities. The application is deployed to a clean Internet Computer canister environment with proper isolation from other applications and permanent custom domain mapping.
+
+## Complete Project Archive Generation Requirements
+- **Generate comprehensive downloadable ZIP archive** containing the entire Prashadam Food website project
+- **Frontend Package Requirements**:
+  - All React + TypeScript source files including `.tsx`, `.ts`, `.css`, and `.js` files
+  - Complete build files and compiled assets including CSS, JS, and index.html build artifacts
+  - Essential configuration files: `package.json`, `tsconfig.json`, `tailwind.config.js`, `vite.config.ts`
+  - Public folder contents including `index.html` and all static assets
+  - Hidden configuration files and folders: `.well-known/ic-domains`, `.ic-assets.json`
+  - All component files, hooks, utilities, and styling files
+  - Node modules dependencies and build artifacts
+- **Backend Package Requirements**:
+  - All Motoko source files including `main.mo` and `migration.mo`
+  - Backend configuration files: `dfx.json`, `canister_ids.json`
+  - Any additional Motoko modules and dependencies
+  - Build artifacts and compiled backend files
+- **Assets Package Requirements**:
+  - Enhanced transparent Prashadam Food logo (`generated/prashadam-logo-enhanced-transparent.dim_400x400.png`)
+  - All promotional images for Caffeine.ai branding
+  - Menu PDF files and templates
+  - Gallery images (tiffin service, buffet setup, kitchen, menu spread)
+  - UPI QR code templates and payment assets
+  - All generated and original image files from the assets list
+- **Configuration and Verification Files**:
+  - IC domain verification file: `frontend/public/.well-known/ic-domains` with exact content for prashadamfood.com and www.prashadamfood.com
+  - Asset configuration: `.ic-assets.json` with proper content-type and caching settings
+  - Deployment configuration files for Internet Computer
+  - SSL certificate and domain mapping configuration data
+- **File Integrity and Encoding Requirements**:
+  - Verify all files are complete and readable before packaging
+  - Ensure UTF-8 encoding for all text files to prevent character corruption
+  - Validate that all image files are properly included and accessible
+  - Check that configuration files contain correct settings and paths
+  - Confirm all dependencies and build files are included
+- **Archive Structure and Delivery**:
+  - Package everything into a single ZIP file for easy download
+  - Organize files in proper directory structure (frontend/, backend/, assets/)
+  - Include README or documentation files if present
+  - Ensure archive is properly compressed and downloadable
+  - Verify archive integrity before delivery
+  - **Generate final download link for the user** to access the complete ZIP package
+
+## Custom Domain Deployment Requirements
+- **Permanent Domain Mapping Configuration**: Deploy with verified custom domain mapping for:
+  - **prashadamfood.com** (primary domain)
+  - **www.prashadamfood.com** (www subdomain)
+- **IC Boundary Node Integration**: Ensure proper `.well-known/ic-domains` configuration is accessible and recognized by Internet Computer boundary nodes for SSL certificate provisioning
+- **Domain Verification File Requirements**:
+  - Create `frontend/public/.well-known/ic-domains` file with exact content (no trailing spaces or empty lines):
+    ```
+    prashadamfood.com
+    www.prashadamfood.com
+    ```
+  - Update `.ic-assets.json` configuration to include `.well-known` directory and `ic-domains` file in deployed assets with:
+    - Proper content type set as `text/plain`
+    - Disabled cache headers for domain verification file
+    - Correct file path mapping to ensure accessibility
+    - Proper asset registration for IC deployment
+  - Ensure file is properly deployed to IC assets and accessible at `https://prashadamfood.com/.well-known/ic-domains`
+- **HTTPS SSL Certification**: Verify consistent HTTPS access across both domain variants with valid SSL certificates
+- **Domain Verification Process**: Complete IC domain verification workflow to ensure domains are properly mapped and functional
+- **DNS Configuration Support**: Provide guidance for proper DNS CNAME record configuration pointing to IC boundary nodes
+- **Domain Propagation Validation**: Verify domain propagation and accessibility from multiple geographic locations
+- **Permanent Deployment Status**: Ensure the domain mapping is permanent and not temporary, with proper canister configuration for long-term hosting
+- **Post-deployment Domain Verification**: After frontend redeployment, verify that both `https://prashadamfood.com` and `https://www.prashadamfood.com` open normally without Unknown Domain or Not Found errors
+- **Canister Configuration**: Ensure proper mapping to canister `klp5p-hyaaa-aaaal-acrmq-cai` with correct IC boundary node recognition
+- **Error 400 Unknown Domain Fix**: Eliminate domain validation errors by ensuring proper `.well-known/ic-domains` file serving and IC boundary node recognition
+
+## Backup and Version Control Requirements
+- **Create Prashadam Food Stable Version 1 Backup**: Generate a complete permanent backup snapshot of the current fully working website
+- **Comprehensive Backup Scope**: Include all components in the backup:
+  - Complete frontend codebase with all React components and styling
+  - Complete backend codebase with all Motoko functions and data structures
+  - All assets including logos, images, and promotional materials
+  - Configuration files and deployment settings
+  - PDF generator functionality and templates
+  - Domain mapping configuration and settings
+  - UPI payment integration code and settings
+  - Menu data structure and content
+  - All working integrations and API endpoints
+- **Backup Storage**: Store the backup internally with clear labeling as "Prashadam Food Stable Version 1"
+- **Restoration Capability**: Ensure the backup can be used for complete restoration of the working website if needed
+- **Version Documentation**: Document the backup creation with timestamp and feature completeness verification
+
+## Clean Deployment Requirements
+- **Deploy to a fresh, isolated Internet Computer canister environment**
+- **Ensure complete separation from any other applications (Thai-to-Hindi, Cartoon Animation, etc.)**
+- **Verify no cross-linking or shared resources with other projects**
+- **Guarantee proper loading of all Prashadam Food specific assets:**
+  - Enhanced transparent Prashadam Food logo
+  - Complete menu data structure
+  - UPI payment integration
+  - Shopping cart functionality
+  - Delivery charge calculation system
+  - Domain mapping configuration
+- **Post-deployment validation requirements:**
+  - Confirm application opens without errors on both prashadamfood.com and www.prashadamfood.com
+  - Verify all pages load correctly with HTTPS
+  - Test menu functionality and cart operations
+  - Validate UPI payment flow
+  - Confirm logo and branding display properly
+  - Ensure all features work as specified
+  - Verify testimonial importer functionality works correctly
+  - Test all latest frontend changes are properly deployed
+- **Clean environment verification:**
+  - No references to other applications in code or configuration
+  - Proper asset isolation and loading
+  - Correct canister configuration for Prashadam Food only
+  - Verified functionality without cross-contamination
+- **Version 53 Restoration Requirements:**
+  - Restore the exact functionality from Version 53 where all buttons, UPI payment, menu system, and domain mapping worked correctly
+  - Ensure all previously working features are fully operational
+  - Maintain the stable configuration that was successfully deployed in Version 53
+  - Preserve all working integrations and prevent regression of functionality
+
+## Pages and Components
+
+### Home Page
+- Hero section highlighting the brand and cuisine philosophy with enhanced transparent Prashadam Food logo
+- Overview of service offerings (Tiffin, corporate buffet, catering)
+- Brief introduction to Jain/Vaishnav dietary principles
+- Call-to-action buttons for menu and contact with main call-to-action text "To know more about us"
+- **Gallery Section**: Responsive grid or carousel displaying food service images with captions highlighting "Pure Vegetarian Jain & Vaishnav Cuisine" featuring:
+  - Tiffin service image showcasing meal delivery
+  - Buffet setup image displaying catering arrangements
+  - Kitchen image highlighting clean preparation environment
+  - Menu spread image showing variety of offerings
+- **Order Now Section**: Positioned near the footer with stylish contact buttons:
+  - Phone call button labeled "Call or WhatsApp" linking to tel:8802452190
+  - Email button linking to mailto:support@prashadamfood.com
+  - Clear English instructions encouraging customers to easily place orders
+  - Consistent with site's kraft paper vegetarian theme and typography
+
+### About Us Page
+- Story of Prashadam Food
+- Focus on purity, tradition, and dedication to Jain/Vaishnav dietary values
+- Information about the kitchen's commitment to no onion, no garlic cooking
+- Team or founder information
+
+### Menu Page
+- **Horizontal Tab Navigation Layout:**
+  - Clean horizontal tab navigation system with bold, clearly separated tabs
+  - Five main tabs for menu categories positioned at the top:
+    - **Thali Menu**
+    - **Tiffin Services**
+    - **Corporate Buffet Services**
+    - **Catering Services**
+    - **Extras**
+  - Tabs are bold, well-spaced, and easy to click without overlapping content
+  - Smooth transitions between menu sections when switching tabs
+  - Mobile-responsive design with touch-friendly tab interaction
+  - Kraft paper texture aesthetic maintained throughout the layout
+- Prominent display of "pure vegetarian | Jain & Vaishnav – No Onion, No Garlic" banner
+- **Robust menu loading system with fallback handling:**
+  - Frontend calls backend `getDetailedMenu()` function with proper error handling
+  - Loading states displayed while fetching menu data from backend
+  - Comprehensive fallback system that displays static menu structure if backend fails
+  - Default menu data initialized in frontend to prevent loading errors
+  - Type-safe parsing of backend responses
+  - Graceful degradation ensuring users always see menu content
+- **Enhanced UPI Payment Integration and WhatsApp Ordering System with Delivery Address Collection:**
+  - **Individual Item Ordering**: Each menu item in **Tiffin Services**, **Corporate Buffet Services**, and **Catering Services** sections displays an "Order via WhatsApp" button that opens WhatsApp to +918802452190 with prefilled message containing item name and price (Note: **Thali Menu** and **Extras** sections do NOT display "Order via WhatsApp" buttons)
+  - **Shopping Cart Functionality**: Customers can add items from **all menu sections including Thali Menu** to a temporary order list (cart) stored in frontend state
+  - **Add to Cart buttons** next to menu items in **all sections including Thali Menu and Extras** for building multi-item orders
+  - **Cart display section** showing selected items with quantities and subtotal
+  - **Customer Address Collection System**:
+    - **Delivery address input field** (required) for accurate delivery coordination
+    - Address validation to ensure complete delivery information is provided
+    - Clear labeling indicating address is required for delivery
+  - **Delivery Charge Calculation System**:
+    - **Automatic delivery fee calculation** based on order total and delivery distance
+    - **Free delivery for orders ₹600 or more** for the first 3 km
+    - **₹70 per km delivery charge** after the first 3 km for orders ₹600+
+    - **₹70 per km delivery charge** for all orders under ₹600
+    - **Distance estimation input** allowing customers to specify approximate delivery distance
+    - **Real-time delivery charge display** updating as distance is entered
+    - **Clear delivery terms explanation** displayed prominently near order total
+  - **Enhanced UPI Payment Checkout System**:
+    - **"Proceed to Checkout" button** that opens a checkout popup/section displaying:
+      - Customer delivery address confirmation
+      - Order summary with all selected items, quantities, and subtotal
+      - **Delivery charges breakdown** showing distance, rate, and total delivery fee
+      - **Final total** including food items and delivery charges
+      - UPI payment details section showing UPI ID **8802452190@okbizaxis**
+      - QR code for UPI payment (generated dynamically with the final total including delivery)
+      - **"Pay via UPI" button** that opens UPI payment intent link for direct payment with total amount
+    - **Payment Confirmation Flow**:
+      - After successful UPI payment confirmation, automatically trigger WhatsApp message
+      - **Enhanced WhatsApp message** sent to **+91 8802452190** includes:
+        - Complete order details with items and quantities
+        - Customer delivery address
+        - Delivery charges breakdown and explanation
+        - Total amount paid (including delivery)
+        - Clear delivery terms and distance information
+      - Payment confirmation integrates seamlessly with existing WhatsApp ordering system
+  - Cart persists during the session but resets on page refresh
+  - Mobile-friendly UPI and WhatsApp integration with proper URL encoding
+  - All buttons styled consistently with Prashadam Food's kraft paper vegetarian theme
+  - Seamless experience for both mobile and desktop users with clear delivery information
+- Dynamically rendered menu sections from backend data with proper categorization:
+  - **Thali Menu** section with four main thali options displayed with **Add to Cart** functionality only (no "Order via WhatsApp" buttons):
+    - Pure Jain Thali (₹170) with 250ml Daal, 250ml Dry or Semi-Gravy Vegetable, 300g Rice, Four Chapatis (Tawa) & Salad
+    - Vaishnav Thali (₹170) with 250ml Daal, 250ml Dry or Semi-Gravy Vegetable, 300g Rice, Four Chapatis (Tawa) & Salad
+    - Special Thali (₹210) with 250ml Daal, 250ml Dry or Semi-Gravy Vegetable, 300g Jeera Rice, Four Chapatis (Tawa), One Sweet, One Curd & Salad
+    - Deluxe Thali (₹270) with 250ml Paneer or Soya Chaap, 250ml Daal Makhani or Kadhi Pakoda, 300g Matar Pulav, Four Chapatis (Tawa), One Sweet, One Curd & Salad
+  - **Extras** section with additional items at extra charge (displays only **Add to Cart** buttons, no "Order via WhatsApp" buttons):
+    - Paneer or Soya Chaap (₹100)
+    - Daal Makhani or Kadhi (₹70)
+    - Matar Pulav (₹60)
+    - Rice (₹60)
+    - Curd (₹50)
+    - Sweets (Price varies by item)
+  - **Tiffin Services** section with:
+    - Meal Components subsection listing:
+      - Daal (250 ml): Rajma, Chole, Kadhi
+      - Seasonal Vegetables (250 ml): Paneer, Soybean, Soya Chaap, Kofte Mushroom
+      - Chapati (4 pieces)
+      - Rice (170 grams)
+      - Salad
+    - Pricing Structure subsection:
+      - Random Customer: Rs. 150/-
+      - Regular Customer: Rs. 110/-
+  - **Corporate Buffet Services** section with:
+    - Buffet Options and Pricing subsection:
+      - Regular Buffet: Rs. 350/- per person
+      - Occasional Buffet: Rs. 450/- per person
+    - Buffet Menu - 8 Items subsection including:
+      - Daal (Choose One): Makhani, Kadhi, Daal Tadka
+      - Vegetable Dishes: One Seasonal Vegetable
+      - Paneer (Any One): Matar Paneer, Matar Paneer Masala, Shahi Paneer, Kadhai Paneer
+      - Rice (Any One): Jira Rice, Matar Pulao, Vegetable Pulao
+      - Bread Per Person (Any One): 4 Chapati, 3 Tandoori Roti, 2 Butter Naan
+      - Raita - 170 ml per person (Any One): Masala Raita, Cucumber Raita, Mix Raita
+      - Sweet (Any One): Kheer, Suji Halwa, Gulab Jamun
+      - Salad (Any One): Seasonal Vegetable, Sirka Salad
+  - **Catering Services** section with:
+    - Pricing Structure subsection:
+      - Service for 100 or more: Starts from Rs. 450/-
+      - Rate note: "Rates are dependent on host demands."
+      - Tagline: "We serve only pure vegetarian food."
+- Each menu item displays:
+  - Item name with proper formatting and attractive typography using natural language "or" formatting
+  - Detailed item descriptions with ingredients and portions
+  - Clear pricing information with proper alignment
+  - Vegetarian compliance indicators (Jain/Vaishnav symbols)
+  - **"Order via WhatsApp" button** for individual item ordering (displayed in Tiffin Services, Corporate Buffet Services, and Catering Services sections only - NOT in Thali Menu or Extras sections)
+  - **"Add to Cart" button** for multi-item ordering (displayed in all sections including Thali Menu and Extras)
+- Clean responsive design with kraft paper texture and warm vegetarian theme colors
+- Modern typography with proper spacing and visual hierarchy
+- Professional presentation with accent dividers and premium layout
+- Mobile-responsive layout with organized category sections
+- **Professional PDF Download Feature:**
+  - "Download Full Menu (PDF)" button positioned at the bottom of the menu page
+  - Button styled consistently with the site's warm vegetarian aesthetic
+  - Clear labeling and prominent placement for easy access
+  - When clicked, generates and downloads a professionally formatted PDF containing all menu sections
+  - **Enhanced PDF specifications with robust Unicode UTF-8 support:**
+    - Uses robust Unicode-compatible PDF renderer with proper UTF-8 encoding to correctly display Indian currency symbols (₹) and all text characters without corruption
+    - Implements Unicode-compatible fonts (Noto Sans or Open Sans) embedded directly within the PDF to prevent platform substitution issues and garbled characters
+    - Ensures consistent rendering across all devices and platforms with proper character encoding and font embedding
+    - Includes enhanced transparent Prashadam Food logo at the top center
+    - Branded header: "Prashadam Food – Pure Vegetarian Jain & Vaishnav Cuisine (No Onion, No Garlic)"
+    - Organized content into clear sections with bold service titles: Thali Menu, Extras, Tiffin Services, Corporate Buffet Services, and Catering Services
+    - Professional restaurant menu style with clean typography, consistent spacing, legible fonts, and properly aligned pricing
+    - Clear pricing with aligned formatting and appropriate spacing
+    - Footer text "© Prashadam Food | Pure Vegetarian Jain & Vaishnav Cuisine | New Delhi"
+    - Professional layout matching the website's vegetarian branding with clean alignment
+    - Optimized for both desktop and mobile viewing with proper text rendering and no garbled characters
+    - Preserves all menu details and prices exactly as displayed on the current Menu page
+    - Tested across multiple devices to verify that all text and symbols display correctly
+
+### Testimonials Section
+- Customer reviews and feedback
+- Display customer names and their experiences
+- Focus on food quality, service, and dietary compliance
+
+### Admin Page - Enhanced Testimonial Importer Feature
+- Two import options for testimonials:
+  1. **Manual Import**: Traditional input form with fields:
+     - Reviewer name (required)
+     - Review text (required)
+     - Rating (optional, 1-5 stars)
+  2. **Google Review Link Import**: Automated extraction feature with:
+     - Input field for Google My Business review link
+     - **Fixed frontend parsing logic** to successfully extract reviewer name, review text, and rating from Google review links without showing "Unable to automatically extract review data from this link" error
+     - **Enhanced parsing capabilities** that handle various Google review URL formats and structures
+     - **Robust data extraction** that properly identifies and extracts review content from Google review pages
+     - Preview section displaying extracted data before confirmation
+     - Import confirmation button to proceed with the extracted data
+- Clean and intuitive interface for both import methods
+- Success confirmation message after successful addition
+- Imported testimonials automatically appear in the main Testimonials section with consistent styling
+
+### Promote Caffeine.ai Section (Admin Only)
+- Dedicated section within admin panel for Caffeine.ai promotional materials
+- Display of three branded social media promotional images (1080x1080px) featuring:
+  1. "Our website was built with AI by DFINITY's Internet Computer — fast, elegant, and easy!"
+  2. "Built with AI — powered by Caffeine.ai on the Internet Computer 🚀"
+  3. "Transform your business online — with AI by DFINITY's Internet Computer 🌐"
+- **Each promotional image includes the correct enhanced transparent Prashadam Food logo** (`generated/prashadam-logo-enhanced-transparent.dim_400x400.png`) for brand authenticity
+- **All promotional banners display the official Prashadam Food logo** instead of any placeholder or incorrect logos
+- Download buttons for each promotional image in social media optimized format
+- Clean grid layout displaying all promotional materials
+- Instructions for sharing on social media platforms
+- **Consistent branding** ensuring all promotional materials match the current site branding with the correct Prashadam Food logo
+
+### Contact Us Page
+- Contact form with fields:
+  - Name (required)
+  - Email (required)
+  - Phone number (required)
+  - Message (required)
+- Business contact information prominently displayed with icons:
+  - Phone: 8802452190 (with phone icon)
+  - Email: support@prashadamfood.com (with email icon)
+- Operating hours
+- **Service Areas section with updated content:**
+  - Display the text:
+    - "We currently serve in South Delhi."
+    - "For catering service we can accommodate locations across NCR area."
+  - Both lines formatted clearly in English with consistent typography and styling
+
+## Design Requirements
+- Clean, traditional aesthetic with modern typography
+- Enhanced transparent Prashadam Food logo prominently displayed in header and footer with proper scaling for both light and dark themes
+- Color scheme: warm vegetarian tones including greens, saffron, and cream with kraft paper texture
+- Professional layout suitable for a food service business
+- Mobile-responsive design
+- Easy navigation between pages
+- **Logo Implementation Requirements:**
+  - Use enhanced transparent Prashadam Food logo (`generated/prashadam-logo-enhanced-transparent.dim_400x400.png`) across all pages
+  - Ensure logo scales properly and maintains quality at different sizes
+  - Implement proper contrast and visibility for both light and dark theme compatibility
+  - Maintain consistent alignment and spacing in header and footer sections
+  - Preserve logo transparency for seamless integration with various backgrounds
+- **Gallery Section Design Requirements:**
+  - Responsive grid or carousel layout that works seamlessly on desktop and mobile
+  - Consistent kraft paper texture and warm vegetarian theme colors
+  - Professional image presentation with proper spacing and alignment
+  - Captions highlighting "Pure Vegetarian Jain & Vaishnav Cuisine" with consistent typography
+  - Smooth transitions and hover effects maintaining site aesthetic
+- **Order Now Section Design Requirements:**
+  - Stylish contact buttons with kraft paper vegetarian theme styling
+  - Clear call-to-action text encouraging customers to place orders in English
+  - Proper spacing and alignment near footer section
+  - Mobile-responsive design with touch-friendly buttons
+  - Consistent typography and color scheme with rest of site
+- **Horizontal Tab Navigation Design Requirements:**
+  - Bold, clearly separated horizontal tabs positioned at the top of the menu section
+  - Tabs are well-spaced and easy to click without overlapping any content
+  - Smooth transitions between menu sections when switching tabs
+  - Kraft paper texture aesthetic maintained throughout the layout
+  - Mobile-responsive design with touch-friendly tab interaction
+  - Consistent typography and spacing with the rest of the site
+- **Enhanced UPI Payment and WhatsApp Ordering Design Requirements:**
+  - **"Order via WhatsApp" buttons** styled consistently with Prashadam Food's kraft paper vegetarian theme (displayed in Tiffin Services, Corporate Buffet Services, and Catering Services sections only - NOT in Thali Menu or Extras sections)
+  - **"Add to Cart" buttons** with complementary styling that distinguishes them from WhatsApp buttons (displayed in all sections including Thali Menu and Extras)
+  - **"Proceed to Checkout" button** prominently styled with clear call-to-action design
+  - **Customer Address Input Field** with clear labeling and required field indicators
+  - **Delivery Distance Input** with user-friendly interface for distance estimation
+  - **Delivery Charges Display** with clear breakdown showing:
+    - Order subtotal
+    - Delivery distance and rate explanation
+    - Delivery charges calculation
+    - Final total including delivery
+    - **Delivery terms explanation** prominently displayed: "Free delivery for orders ₹600+ (first 3km). ₹70/km after 3km or for orders under ₹600"
+  - **Enhanced UPI Checkout Popup/Section** with clean, professional layout featuring:
+    - Customer delivery address confirmation
+    - Order summary with clear item listing and subtotal calculation
+    - **Delivery charges breakdown** with distance and rate information
+    - **Final total** prominently displayed including delivery charges
+    - UPI payment details section with prominent display of UPI ID **8802452190@okbizaxis**
+    - QR code display with proper sizing for mobile and desktop scanning (updated with final total)
+    - **"Pay via UPI" button** with distinctive styling for payment action
+  - **Shopping cart display** with clean, organized layout showing selected items, quantities, and subtotal
+  - **Thali Menu Section Design**: Items display with **Add to Cart** buttons only (no "Order via WhatsApp" buttons), maintaining proper alignment and spacing with consistent visual style
+  - **Extras Section Design**: Items display with **Add to Cart** buttons only (no "Order via WhatsApp" buttons), maintaining proper alignment and spacing with consistent visual style
+  - All buttons mobile-responsive with touch-friendly interaction
+  - Consistent typography and spacing with the rest of the site
+  - Cart, address collection, and checkout interfaces integrate seamlessly with existing menu layout
+  - UPI payment flow optimized for both mobile and desktop users with clear delivery information
+- Visually appealing menu presentation with vegetarian icons and subtle accents
+- Consistent typography and spacing throughout menu page with premium presentation
+- Proper alignment of pricing and item text with accent dividers
+- Natural language formatting using "or" instead of parentheses for menu options
+- Loading indicators and error states with user-friendly messaging
+- **Professional PDF Download Button Design:**
+  - Button styled with warm vegetarian aesthetic matching site theme
+  - Clear, prominent placement at bottom of menu page
+  - Consistent with existing button styles throughout the site
+  - Mobile-responsive design with touch-friendly interaction
+- **Promotional Materials Design Requirements:**
+  - **All promotional banners must display the correct enhanced transparent Prashadam Food logo** (`generated/prashadam-logo-enhanced-transparent.dim_400x400.png`)
+  - **Consistent branding** across all promotional materials matching the current site aesthetic
+  - **Proper logo placement and sizing** on all promotional images
+  - **Visual consistency** ensuring promotional materials align with Prashadam Food branding
+- Footer includes contact information with phone (8802452190) and email (support@prashadamfood.com) with appropriate icons
+- App content language: English
+
+## Backend Data Storage
+- Contact form submissions with customer inquiries
+- Testimonials and customer reviews with reviewer names, review text, and optional ratings
+- Complete structured menu data with:
+  - Thali Menu category with four thali options and detailed descriptions using natural language "or" formatting
+  - Extras category with additional items and pricing using clear text formatting
+  - Tiffin Services category with meal components and pricing structure
+  - Corporate Buffet Services category with buffet options, pricing, and 8-item menu details
+  - Catering Services category with pricing structure and service information
+  - Individual menu items with names, descriptions, portions, and prices formatted with "or" instead of parentheses
+  - Hierarchical categorization of menu content
+  - Vegetarian compliance indicators for each item
+- **Enhanced UPI payment transaction logs and order tracking data with delivery information**
+- **Order history with payment status, delivery address, delivery charges, and WhatsApp delivery confirmation**
+- **Delivery charge calculation data and distance-based pricing records**
+- Promotional material metadata and file references for Caffeine.ai branded content
+- **Backup Version Storage**: Store complete backup data for Prashadam Food Stable Version 1 including all code, assets, and configuration
+- **Domain mapping configuration data**: Store custom domain settings and SSL certificate information
+- **Complete Project Archive Data**: Store all frontend, backend, and asset files for downloadable ZIP generation
+
+## Backend Operations
+- Store and retrieve contact form submissions
+- Manage testimonials and reviews
+- Add new testimonials through both manual and automated import features
+- **Fixed Google My Business review link parsing** to successfully extract testimonial data without errors:
+  - **Enhanced parsing algorithms** that handle various Google review URL formats
+  - **Robust data extraction logic** that properly identifies reviewer names, ratings, and review text
+  - **Error handling improvements** to prevent "Unable to automatically extract review data from this link" errors
+  - **Support for multiple Google review link structures** and formats
+  - **Validation and sanitization** of extracted review data before storage
+- **Enhanced menu data handling:**
+  - Provide reliable `getDetailedMenu()` function with proper error handling and response formatting
+  - Ensure consistent data structure and type compatibility with frontend expectations
+  - Handle edge cases where menu data might be temporarily unavailable
+  - Return properly formatted JSON responses that match frontend parsing requirements
+- Store structured menu data with categories, items, descriptions, and prices using natural language formatting
+- Provide API endpoints to serve menu data to frontend for dynamic rendering with proper text formatting
+- Handle menu content management with all thali, extras, tiffin services, corporate buffet services, and catering services data using "or" formatting instead of parentheses
+- Support menu item filtering and categorization for display
+- **Enhanced UPI Payment Processing Operations with Delivery Management:**
+  - **Calculate delivery charges** based on order total and delivery distance:
+    - Free delivery for orders ₹600+ for first 3km
+    - ₹70 per km after 3km for orders ₹600+
+    - ₹70 per km for all orders under ₹600
+  - **Generate UPI payment QR codes** dynamically based on final total (including delivery charges) and UPI ID **8802452190@okbizaxis**
+  - **Create UPI payment intent URLs** for direct payment app integration with total amount including delivery
+  - **Process payment confirmation** and validate successful UPI transactions
+  - **Store comprehensive order and payment transaction data** with timestamps, delivery address, delivery charges, and status tracking
+  - **Generate enhanced WhatsApp message content** including:
+    - Complete order details with items and quantities
+    - Customer delivery address
+    - Delivery charges breakdown and explanation
+    - Total amount paid (including delivery)
+    - Clear delivery terms and distance information
+  - **Trigger automated WhatsApp message delivery** after successful payment confirmation with enhanced delivery information
+  - **Handle payment failure scenarios** and provide appropriate user feedback
+  - **Generate order confirmation data** for WhatsApp message integration with delivery details
+- Process testimonial imports with validation and storage for both manual and automated methods
+- **Serve promotional material files with correct Prashadam Food logo** and metadata for Caffeine.ai branded content download functionality
+- **Fixed PDF Generation Operations with Enhanced Unicode UTF-8 Support:**
+  - Generate professionally formatted PDF documents using robust Unicode-compatible PDF renderer with proper UTF-8 encoding to correctly display Indian currency symbols (₹) and all text characters without corruption
+  - Implement Unicode-compatible fonts (Noto Sans or Open Sans) embedded directly within the PDF to prevent platform substitution issues and ensure consistent rendering
+  - Embed all fonts within the PDF to prevent garbled text and symbol corruption across different devices and platforms
+  - Include enhanced transparent Prashadam Food logo at the top center
+  - Branded header: "Prashadam Food – Pure Vegetarian Jain & Vaishnav Cuisine (No Onion, No Garlic)"
+  - Format PDF with professional restaurant menu style: clean alignment, bold section titles (Thali Menu, Extras, Tiffin Services, Corporate Buffet Services, Catering Services), proper spacing, legible fonts, and correct currency symbol rendering
+  - Organize content into clear sections in proper order with consistent formatting
+  - Clear pricing with aligned formatting and appropriate spacing
+  - Add footer text "© Prashadam Food | Pure Vegetarian Jain & Vaishnav Cuisine | New Delhi"
+  - Ensure PDF maintains vegetarian branding and professional presentation with clean typography
+  - Handle PDF generation requests and serve downloadable files to frontend with proper character encoding
+  - Preserve all menu details and prices exactly as displayed on the current Menu page
+  - Test PDF generation across multiple devices to eliminate garbled characters and ensure proper text rendering on both desktop and mobile platforms
+  - Optimize PDF for print and download with proper font embedding and Unicode support to prevent character corruption
+- **Backup Management Operations:**
+  - **Create comprehensive backup snapshot** of the current fully working Prashadam Food website
+  - **Store complete codebase backup** including all frontend and backend code
+  - **Archive all assets and configuration** including logos, images, promotional materials, and settings
+  - **Preserve PDF generator functionality** and templates in backup
+  - **Save domain mapping configuration** and deployment settings
+  - **Document backup creation** with timestamp and version labeling as "Prashadam Food Stable Version 1"
+  - **Ensure restoration capability** from the backup for complete website recovery
+  - **Verify backup completeness** including all working integrations and functionality
+- **Enhanced Custom Domain Management Operations:**
+  - **Configure `.well-known/ic-domains` endpoint** to serve proper domain verification data for IC boundary nodes with:
+    - Correct content-type headers set to `text/plain`
+    - Disabled caching headers for domain verification file
+    - Proper file path mapping and asset registration
+    - Verification that the file is accessible at the correct URL path
+  - **Handle SSL certificate provisioning** and renewal for custom domains with IC boundary node integration
+  - **Manage domain mapping configuration** for both prashadamfood.com and www.prashadamfood.com with proper canister mapping to `klp5p-hyaaa-aaaal-acrmq-cai`
+  - **Validate domain accessibility** and HTTPS functionality across both domain variants
+  - **Store domain configuration data** for permanent deployment
+  - **Handle domain propagation verification** and status monitoring
+  - **Fix Error 400 Unknown Domain issues** by ensuring proper IC boundary node recognition and domain validation
+  - **Verify IC boundary node integration** for SSL certificate provisioning and domain mapping
+- **Complete Project Archive Generation Operations:**
+  - **Generate comprehensive ZIP archive** containing all project files
+  - **Package frontend files** including all React components, TypeScript files, CSS, configuration files, build artifacts, and compiled assets including CSS, JS, and index.html build artifacts
+  - **Package backend files** including all Motoko source files, configuration, and compiled assets
+  - **Include all project assets** such as images, PDFs, logos, and promotional materials
+  - **Verify file integrity** and UTF-8 encoding before packaging
+  - **Organize archive structure** with proper directory hierarchy (frontend/, backend/, assets/)
+  - **Ensure completeness** of all dependencies, configuration files, and hidden files
+  - **Generate downloadable ZIP file** with proper compression and accessibility
+  - **Validate archive integrity** before delivery to ensure all files are included and readable
+  - **Provide final download link** for user access to the complete ZIP package
+- **Clean deployment verification operations:**
+  - Ensure all backend functions are properly isolated from other applications
+  - Verify menu data loading works correctly in clean environment
+  - Confirm UPI payment processing operates without cross-contamination
+  - Validate all API endpoints respond correctly for Prashadam Food specific data
+  - Test cart functionality and delivery calculations work properly
+  - Ensure PDF generation operates correctly with proper logo and branding
+  - **Verify custom domain functionality** with proper HTTPS access on both prashadamfood.com and www.prashadamfood.com
+  - **Test `.well-known/ic-domains` accessibility** for SSL certificate provisioning and IC boundary node recognition
+  - **Validate domain mapping to canister `klp5p-hyaaa-aaaal-acrmq-cai`** with proper IC configuration
+  - **Eliminate Error 400 Unknown Domain issues** through proper domain verification and IC boundary node integration
+  - **Version 53 restoration verification:**
+    - Confirm all previously working functionality from Version 53 is restored
+    - Validate that buttons, UPI payment, menu system, and domain mapping work exactly as they did in Version 53
+    - Ensure no regression of features that were working in the stable version
+    - Test all integrations to match Version 53 performance and functionality

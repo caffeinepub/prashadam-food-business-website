@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.625rem;
+        /* Warm cream background */
+        --background: 0.97 0.015 75;
+        --foreground: 0.25 0.02 60;
+        /* Saffron primary */
+        --primary: 0.68 0.18 55;
+        --primary-foreground: 0.98 0.01 75;
+        /* Deep green secondary */
+        --secondary: 0.55 0.12 145;
+        --secondary-foreground: 0.98 0.01 75;
+        /* Light cream muted */
+        --muted: 0.94 0.015 75;
+        --muted-foreground: 0.50 0.02 60;
+        /* Warm accent */
+        --accent: 0.75 0.15 45;
+        --accent-foreground: 0.25 0.02 60;
+        --card: 0.99 0.01 75;
+        --card-foreground: 0.25 0.02 60;
+        --popover: 0.99 0.01 75;
+        --popover-foreground: 0.25 0.02 60;
+        --destructive: 0.577 0.245 27.325;
+        --destructive-foreground: 0.985 0 0;
+        --border: 0.88 0.02 75;
+        --input: 0.88 0.02 75;
+        --ring: 0.68 0.18 55;
+        --chart-1: 0.68 0.18 55;
+        --chart-2: 0.55 0.12 145;
+        --chart-3: 0.75 0.15 45;
+        --chart-4: 0.60 0.14 120;
+        --chart-5: 0.70 0.16 35;
+        --sidebar: 0.97 0.015 75;
+        --sidebar-foreground: 0.25 0.02 60;
+        --sidebar-primary: 0.68 0.18 55;
+        --sidebar-primary-foreground: 0.98 0.01 75;
+        --sidebar-accent: 0.94 0.015 75;
+        --sidebar-accent-foreground: 0.25 0.02 60;
+        --sidebar-border: 0.88 0.02 75;
+        --sidebar-ring: 0.68 0.18 55;
+        
+        /* Kraft paper colors */
+        --kraft: 0.75 0.04 65;
+        --kraft-light: 0.85 0.03 65;
+        --kraft-dark: 0.55 0.05 60;
+        --kraft-text: 0.30 0.03 55;
+    }
+
+    .dark {
+        --background: 0.20 0.02 60;
+        --foreground: 0.95 0.01 75;
+        --primary: 0.75 0.18 55;
+        --primary-foreground: 0.20 0.02 60;
+        --secondary: 0.45 0.12 145;
+        --secondary-foreground: 0.95 0.01 75;
+        --muted: 0.30 0.02 60;
+        --muted-foreground: 0.70 0.01 75;
+        --accent: 0.65 0.15 45;
+        --accent-foreground: 0.95 0.01 75;
+        --card: 0.25 0.02 60;
+        --card-foreground: 0.95 0.01 75;
+        --popover: 0.25 0.02 60;
+        --popover-foreground: 0.95 0.01 75;
+        --destructive: 0.704 0.191 22.216;
+        --destructive-foreground: 0.95 0.01 75;
+        --border: 0.35 0.02 60;
+        --input: 0.35 0.02 60;
+        --ring: 0.75 0.18 55;
+        --chart-1: 0.75 0.18 55;
+        --chart-2: 0.55 0.12 145;
+        --chart-3: 0.75 0.15 45;
+        --chart-4: 0.60 0.14 120;
+        --chart-5: 0.70 0.16 35;
+        --sidebar: 0.25 0.02 60;
+        --sidebar-foreground: 0.95 0.01 75;
+        --sidebar-primary: 0.75 0.18 55;
+        --sidebar-primary-foreground: 0.20 0.02 60;
+        --sidebar-accent: 0.30 0.02 60;
+        --sidebar-accent-foreground: 0.95 0.01 75;
+        --sidebar-border: 0.35 0.02 60;
+        --sidebar-ring: 0.75 0.18 55;
+        
+        /* Kraft paper colors for dark mode */
+        --kraft: 0.35 0.04 60;
+        --kraft-light: 0.45 0.03 60;
+        --kraft-dark: 0.25 0.05 55;
+        --kraft-text: 0.85 0.02 70;
+    }
+
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+    
+    /* Kraft paper texture colors */
+    .bg-kraft {
+        background-color: oklch(var(--kraft));
+    }
+    
+    .bg-kraft-light {
+        background-color: oklch(var(--kraft-light));
+    }
+    
+    .bg-kraft-dark {
+        background-color: oklch(var(--kraft-dark));
+    }
+    
+    .text-kraft-text {
+        color: oklch(var(--kraft-text));
+    }
+    
+    .border-kraft-dark {
+        border-color: oklch(var(--kraft-dark));
+    }
+}
